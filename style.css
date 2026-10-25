@@ -1,0 +1,132 @@
+/* 補給站的網頁（spec 10 B197）：顏色照 App 的米白和喝水藍，次要文字和連結比 App 深一點，米白底上的對比到 4.5:1 以上。 */
+:root {
+    color-scheme: light dark;
+    --background: #f6f1e7;
+    --card: #fffcf6;
+    --text: #3a332b;
+    --secondary: #6f665a;
+    --link: #2f6ea8;
+    --water: #5b9bd5;
+    --border: #e9e2d6;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #121212;
+        --card: #1e1e1e;
+        --text: #edeae4;
+        --secondary: #9a958c;
+        --link: #7fb3e6;
+        --water: #7fb3e6;
+        --border: #333333;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font: 17px/1.75 -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
+
+main {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3rem;
+}
+
+h1 {
+    font-size: 1.75rem;
+    line-height: 1.35;
+    margin: 0 0 0.25rem;
+}
+
+h1::before {
+    content: "";
+    display: block;
+    width: 2.5rem;
+    height: 0.3rem;
+    margin-bottom: 1rem;
+    border-radius: 0.15rem;
+    background: var(--water);
+}
+
+h2 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 2.25rem 0 0.5rem;
+}
+
+h3 {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin: 1.5rem 0 0.25rem;
+}
+
+p,
+ul {
+    margin: 0.5rem 0;
+}
+
+ul {
+    padding-left: 1.4rem;
+}
+
+li + li {
+    margin-top: 0.35rem;
+}
+
+a {
+    color: var(--link);
+    text-underline-offset: 0.15em;
+}
+
+.meta {
+    color: var(--secondary);
+}
+
+.card {
+    margin: 1.25rem 0;
+    padding: 0.75rem 1.25rem;
+    border-radius: 16px;
+    background: var(--card);
+}
+
+.links {
+    padding: 0;
+    list-style: none;
+}
+
+.links a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 16px;
+    background: var(--card);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.links li + li {
+    margin-top: 0.75rem;
+}
+
+footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+
+footer a {
+    margin-right: 1rem;
+}
